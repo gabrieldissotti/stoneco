@@ -5,15 +5,19 @@ export interface Props {
   test: string;
 }
 
+export interface State extends Props {
+
+}
+
 /**
  * @title StoneCO
  * @category Analytics
  */
 export default function App(
   state: Props = { test : '1' },
-): App<Manifest, Props> {
+): App<Manifest, State> {
   console.log('==========================================')
-  console.log(state.test)
+  console.log(state)
   console.log('==========================================')
   return { manifest, state };
 }

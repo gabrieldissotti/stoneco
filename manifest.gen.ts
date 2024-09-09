@@ -2,7 +2,18 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$0 from "./loaders/flags.ts";
+import * as $$$1 from "./loaders/icons.ts";
+import * as $$$$$$0 from "./sections/Sprites.tsx";
+
 const manifest = {
+  "loaders": {
+    "stoneco/loaders/flags.ts": $$$0,
+    "stoneco/loaders/icons.ts": $$$1,
+  },
+  "sections": {
+    "stoneco/sections/Sprites.tsx": $$$$$$0,
+  },
   "name": "stoneco",
   "baseUrl": import.meta.url,
 };

@@ -10,16 +10,18 @@ export interface State extends Props {
 }
 
 /**
- * @title StoneCO
- * @category Analytics
+ * @title StoneCo
+ * @description Code shared between Stone products.
+ * @category Tool
+ * @logo https://raw.githubusercontent.com/gabrieldissotti/stoneco/static/images/logo-stone.png
  */
 export default function App(
-  state: Props = { test : '1' },
+  props: Props = { test : '1' },
 ): App<Manifest, State> {
   console.log('==========================================')
-  console.log(state)
+  console.log(props)
   console.log('==========================================')
-  return { manifest, state };
+  return { manifest, state: props };
 }
 
 export type AppContext = AC<ReturnType<typeof App>>;

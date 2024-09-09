@@ -6,14 +6,23 @@ const icons = Object.keys(AvailableIcons).map((iconName) => ({
   label: iconName,
 }));
 
+export interface Icon {
+  icon: string;
+  label: string;
+  value: string;
+}
+
 export default function IconsLoader(
   _props: unknown,
-  req: Request,
-  ctx: FnContext,
-) {
-  Object.entries(allowCorsFor(req)).map(([name, value]) => {
-    ctx.response.headers.set(name, value);
-  });
+  req?: Request,
+  ctx?: FnContext,
+): Icon[] {
+  if(req && ctx) {
+    Object.entries(allowCorsFor(req)).map(([name, value]) => {
+      ctx.response.headers.set(name, value);
+    });
+
+  }
 
   return icons.map((icon) => ({
     icon: icon.component,
